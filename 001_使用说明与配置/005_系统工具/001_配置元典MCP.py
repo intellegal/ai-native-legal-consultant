@@ -94,7 +94,7 @@ def mcp_post(url: str, key: str, payload: dict, session_id: str | None = None):
         "Authorization": "Bearer " + key,
         "Accept": "application/json, text/event-stream",
         "Content-Type": "application/json",
-        "User-Agent": "ai-native-legal-consultant/1.0",
+        "User-Agent": "ai-native-legal-consultant/1.1.0",
     }
     if session_id:
         headers["Mcp-Session-Id"] = session_id
@@ -117,7 +117,7 @@ def test_server(name: str, url: str, key: str) -> tuple[bool, str]:
         "params": {
             "protocolVersion": "2025-06-18",
             "capabilities": {},
-            "clientInfo": {"name": "ai-native-legal-consultant-setup", "version": "1.0"},
+            "clientInfo": {"name": "ai-native-legal-consultant-setup", "version": "1.1.0"},
         },
     }
     try:

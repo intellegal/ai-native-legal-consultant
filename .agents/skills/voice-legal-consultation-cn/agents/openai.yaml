@@ -1,7 +1,7 @@
 interface:
   display_name: "我的法律问题"
-  short_description: "理清事实材料，核查法规与案例，形成深入、可回查的法律分析"
-  default_prompt: "使用 $voice-legal-consultation-cn 接住“我有一个法律问题”，先完成有用的基础梳理，并在用户需要时核查法规与案例，形成深入、可回查的法律分析；真人复核仅作为必要时的可选后续。"
+  short_description: "追问事实证据，参考公开案例，按需完成数据库核查"
+  default_prompt: "使用 $voice-legal-consultation-cn 接住“我有一个法律问题”，先通过追问、材料邀请和公开案例参考形成有前提的初步判断；用户需要更准确时，再用法律数据库核对现行法规、案例全文和相反观点，形成深入、可回查的法律分析；真人复核仅作为必要时的可选后续。"
 
 policy:
   allow_implicit_invocation: true

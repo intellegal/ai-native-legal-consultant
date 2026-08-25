@@ -50,6 +50,15 @@ Each material proposition must contain:
 - legal issue affected;
 - next verification action.
 
+Keep proposition/source status separate from evidence availability. For each decision-changing proposition, use one evidence-action label:
+
+- `仅有口述`: the user or another speaker has described it, but no independent material is currently linked;
+- `待补材料`: a concrete item probably exists and the user or another holder may be able to provide it later;
+- `已提供待审阅`: the item is in `002_你的材料/` but its relevant content, context, completeness, or reliability has not yet been reviewed;
+- `暂无法确认`: no presently feasible source or acquisition route is known.
+
+When evidence may change the conclusion, ask once for the specific item and explain its purpose in ordinary language. Record the requested item, why it matters, likely holder, next feasible action, and the consequence of absence. If the user cannot provide it now, do not stall the interview or repeatedly ask; continue with an expressly conditional judgment and surface the item in the result/action list.
+
 Convert labels into behavior. If the user says “he defrauded me,” ask what was said/done, when, by whom, what the user relied on, what changed, and what records exist. Retain the user’s label separately as their characterization.
 
 ## Adverse-fact protocol
@@ -72,4 +81,4 @@ If accounts conflict, place them side by side with sources. Do not accuse. Ask w
 - Confirm critical names, dates, numbers, negations, and quoted words against the original.
 - OCR and speech transcription are derivative; inspect the underlying material for critical content.
 - Do not infer truth from accent, hesitation, confidence, emotion, disability, or fluency.
-- Allow multiple sessions. Unknown is a valid state and must constrain the conclusion.
+- Allow multiple sessions. Unknown is a valid proposition state, but it must be paired with one of the evidence-action labels above and must constrain the conclusion.

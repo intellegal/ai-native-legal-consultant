@@ -4,7 +4,7 @@
 
 Create `004_给你的结果/001_咨询结果.md` from `assets/咨询结果模板.md`. Do not create separate competing “basic” and “full” reports.
 
-### Basic organization version
+### Basic judgment version
 
 The baseline result may contain:
 
@@ -15,8 +15,10 @@ The baseline result may contain:
 - concrete urgent/preservation signals already triggered;
 - issue and verification map;
 - next materials, questions, and reversible practical steps.
+- traceable public court cases, official publications, or reliable reporting actually used during the interview;
+- a provisional, non-numeric direction tied to the stated facts, evidence status, public sources, and unresolved variables.
 
-It must visibly say that current law and cases have not yet been verified. Leave those sections marked “尚未核查”; never complete them from model memory.
+For every public source, record source type, publisher, title/case, URL, publication/decision date when available, retrieval time, proposition supported, and limitations. It must visibly say that public search may be incomplete, stale, abridged, or missing contrary cases and is not legal-database verification. Leave the current-law and database-case sections marked “尚未核查”; never complete them from model memory.
 
 ### Law-and-case verified version
 
@@ -41,7 +43,7 @@ Call something a new or important finding only if it points to a current rule, l
 
 Walk through only the most important findings, risks/unknowns, and next steps. Ask what the user wants expanded, use plain-language principles and bounded examples, then use teach-back and invite correction. A material correction updates the workpaper and reruns affected analysis.
 
-At the basic completion point, ask whether the organization is enough or whether the user wants current-law and case verification. At verified completion, ask whether the result is enough or the user still needs human confirmation. A decline ends the offer; do not keep upselling.
+At the basic completion point, first state the provisional direction, then ask in one short sentence whether it is enough or the user wants current-law, full-text, and contrary-case database verification. If the user accepts and no Key is configured, say only that a free YuanDian Key is needed and offer to open the registration page. Do not repeat the facts, point ceiling, or internal search plan. At verified completion, ask whether the result is enough or the user still needs human confirmation. A decline ends the offer; do not keep upselling.
 
 ## Lawyer review
 

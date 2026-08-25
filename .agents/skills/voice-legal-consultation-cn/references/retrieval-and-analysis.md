@@ -2,9 +2,9 @@
 
 ## Capability gate
 
-This protocol starts only after the user chooses the deeper verification layer. A working legal MCP is required to present current law or a final substantive legal opinion as verified. “Connected” is not enough: test that it returns traceable current text, authority, effective date/version, and scope.
+This protocol starts only after the user chooses the deeper verification layer. Earlier public-Web examples and provisional judgments remain useful inputs, not mistakes to erase. A working legal MCP is required to present current law or a substantive legal opinion as database-verified. “Connected” is not enough: test that it returns traceable current text, authority, effective date/version, and scope.
 
-Without a passing MCP, the baseline fact/material/risk organization remains a valid deliverable. Keep `result_level: BASELINE`, label law and cases “尚未核查”, preserve the user’s work, and guide at most one setup action at a time. Describe the missing capability plainly instead of calling the whole setup incomplete.
+Without a passing MCP, the evidence-aware baseline and any traceable public-source preliminary analysis remain a valid deliverable. Keep `result_level: BASELINE`, label database law/case status “尚未核查”, preserve the user’s work, and guide at most one setup action at a time. Describe the missing capability plainly instead of calling the whole setup incomplete.
 
 ## Route by question
 
@@ -12,7 +12,8 @@ Without a passing MCP, the baseline fact/material/risk organization remains a va
 - User facts/evidence → files, user clarification, lawful public records.
 - Judicial application/comparability → `$prc-case-research` in hosted-consultation mode.
 - Current local process/forms → current official court/agency website.
-- General web pages/search snippets → discovery only, never the sole basis for a major legal conclusion.
+- Court/government publications, public judgments, and reliable reporting → usable preliminary context when source type, link, time, proposition, and limits are visible; they may support a provisional direction but not a claim of comprehensive/current database verification.
+- Commentary and search snippets → discovery only, never the sole basis for a major legal conclusion.
 
 ## Decision-first decomposition
 
@@ -25,6 +26,8 @@ Before searching, write:
 5. expected deliverables and coverage limits.
 
 Create `003_内部工作区/003_案件梳理与案例检索建议.md`. If the opt-in choice expressly covered the already identified issue map, record it as the single matter-level approval and pass it to `$prc-case-research`; do not ask again. If the boundary was not clear, give one compact summary combining whole-matter scope, minimum-data boundary, and the default `3500 POINT` authorization boundary, then obtain one confirmation. Explain that the number is not a retrieval tier or spending target. Only a materially new matter outside the approved map or a call that would cross the authorization boundary requires renewed confirmation.
+
+The first user-facing upgrade invitation must not recite this internal scope, data, and point structure. The user's affirmative choice to verify the already identified matter records the default matter-wide/minimum-data/`3500 POINT` boundary internally. Expand it to the user only when scope is unclear, the user asks or chooses a lower ceiling, a materially new matter appears, or the next call would cross the ceiling.
 
 ## Current-law retrieval
 
@@ -49,6 +52,8 @@ Use `$prc-case-research` faithfully:
 - use targeted official-Web discovery for official reference/typical cases, court publications, recent terminology, and omission checking, then verify identity and text;
 - write detailed research to `003_内部工作区/004_法律与案例检索记录.md` and return a concise handoff for the user report;
 - stop on whole-matter coverage and saturation, not the first usable case, an arbitrary quantity, or unused POINT allowance.
+
+Treat public cases used during the interview as seed leads. Verify their identity, full text when available, applicable-law version, comparability, later treatment, and contrary patterns before promoting them from `公开信息参考` to `案例观察`. If a public example cannot be verified or proves materially different, keep the original link visible and explain the downgrade rather than silently removing it.
 
 Never state that no case exists merely because a search returned none. State platform, query, time, filters, and coverage.
 

@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "product": "ai-native-legal-consultant",
-  "version": "1.0.1",
-  "released_at": "2026-08-24",
+  "version": "1.1.0",
+  "released_at": "2026-08-25",
   "channel": "stable",
   "repository": "https://github.com/intellegal/ai-native-legal-consultant",
-  "summary": "通过自然讲述、材料阅读、法规与案例核查和持续推理，形成深入、可回查的法律分析；真人复核作为必要时的可选后续。"
+  "summary": "通过主动证据请求和公开案例参考形成初步判断，并可按需升级为覆盖现行法规、案例全文和相反观点的数据库核查；真人复核作为必要时的可选后续。"
 }

@@ -99,7 +99,7 @@ function Invoke-McpRequest([string]$Url, [hashtable]$Payload, [string]$Key, [str
     $headers = @{
         Authorization = 'Bearer ' + $Key
         Accept = 'application/json, text/event-stream'
-        'User-Agent' = 'ai-native-legal-consultant/1.0'
+        'User-Agent' = 'ai-native-legal-consultant/1.1.0'
     }
     if ($SessionId) { $headers['Mcp-Session-Id'] = $SessionId }
     $params = @{
@@ -127,7 +127,7 @@ function Test-McpServer([string]$Name, [string]$Url, [string]$Key) {
             jsonrpc = '2.0'; id = 1; method = 'initialize'
             params = @{
                 protocolVersion = '2025-06-18'; capabilities = @{}
-                clientInfo = @{ name = 'ai-native-legal-consultant-setup'; version = '1.0' }
+                clientInfo = @{ name = 'ai-native-legal-consultant-setup'; version = '1.1.0' }
             }
         }
         $init = Invoke-McpRequest $Url $initialize $Key

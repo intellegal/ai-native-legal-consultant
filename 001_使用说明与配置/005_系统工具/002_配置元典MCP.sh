@@ -102,7 +102,7 @@ mcp_post() {
     -H "Authorization: Bearer $key" \
     -H 'Accept: application/json, text/event-stream' \
     -H 'Content-Type: application/json' \
-    -H 'User-Agent: ai-native-legal-consultant/1.0' \
+    -H 'User-Agent: ai-native-legal-consultant/1.1.0' \
     --data "$payload" --max-time 30
   [ -z "$session" ] || set -- "$@" -H "Mcp-Session-Id: $session"
   MCP_HTTP=$(curl "$@") || return 1
@@ -123,7 +123,7 @@ http_message() {
 test_server() {
   server_name=$1
   server_url=$2
-  initialize='{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"ai-native-legal-consultant-setup","version":"1.0"}}}'
+  initialize='{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"ai-native-legal-consultant-setup","version":"1.1.0"}}}'
   if ! mcp_post "$server_url" "$initialize" ''; then
     test_passed=0
     test_message=$(http_message "$MCP_HTTP")
