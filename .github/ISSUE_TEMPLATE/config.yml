@@ -1,0 +1,6 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 从本地工作区开始法律咨询
+    url: https://github.com/intellegal/ai-native-legal-consultant#一句话开始
+    about: 不要在公开 Issue 中提交案情或材料；请按照 README 在自己的本地工作区开始。
+

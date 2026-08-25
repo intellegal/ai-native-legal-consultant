@@ -1,0 +1,89 @@
+name: 技术问题
+description: 报告安装、工作区绑定、运行、工具配置或公开文档问题
+title: "[技术问题] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 这是公开页面
+
+        请勿在此提交真实案情、证据材料、姓名、证件号码、联系方式、未公开文件或任何 API Key。
+
+        本区域只处理安装故障、程序错误和公开文档问题，不提供法律咨询。需要法律咨询，请按照 README 在自己的本地工作区开始。
+
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: 隐私确认
+      options:
+        - label: 我确认这是公开 Issue，已删除或脱敏所有真实案情、证据、身份信息和联系方式。
+          required: true
+        - label: 我没有粘贴 API Key、Token、密码或其他凭据。
+          required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: 问题类型
+      options:
+        - 安装或下载
+        - 工作区绑定
+        - GPT Live / 语音入口
+        - 法律 MCP 配置（请勿提交 Key）
+        - 文件或报告生成
+        - 公开文档
+        - 其他技术问题
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: 工作包版本
+      description: 可查看 `.agents/release.json`，例如 1.1.0。
+      placeholder: 例如：1.1.0
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: 操作系统
+      options:
+        - Windows
+        - macOS
+        - Linux
+        - 其他
+    validations:
+      required: true
+
+  - type: textarea
+    id: observed
+    attributes:
+      label: 实际发生了什么
+      description: 只描述技术现象，不要提交真实案情或材料内容。
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      description: 使用虚构或脱敏信息说明操作步骤。
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望结果
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: 已脱敏日志（可选）
+      description: 删除路径中的用户名、案件内容、联系方式和全部凭据后再粘贴。
+      render: shell
+
