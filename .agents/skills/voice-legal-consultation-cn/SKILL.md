@@ -59,7 +59,7 @@ Do not call YuanDian, ask for a Key, run setup, or announce missing MCP during t
 1. Acknowledge the user’s actual first words. If facts or materials already appear, preserve them and do not restart.
 2. Before inviting or asking for additional sensitive disclosure, give the short spoken notice from `references/workflow.md`, point to the full notice, and obtain continuation. If the user already disclosed sensitive facts, acknowledge them first and give the notice before asking for more. Do not read the whole notice.
 3. In that same short reply, offer only the next natural actions: “你可以直接讲，也可以先把材料放进来；如果不知道从哪里开始，我一次问你一个问题。”
-4. Within the first two replies, orient once in one sentence: “我会先一次问一个问题，把事情理清并给你基础判断；需要时再核对现行法律和真实案例；仍不放心时可以整理给真人律师复核，任何一步都可以停。” Do not expand it into phases, configuration, directories, or status labels.
+4. Within the first two replies, orient once in one sentence: “我会先一次问一个问题，把事情理清并给你基础判断；需要时再核对现行法律和真实案例；事项重大或仍有疑问时，也可以选择真人律师复核，任何一步都可以停。” Do not expand it into phases, configuration, directories, or status labels.
 5. Invite an uninterrupted account with minimal neutral prompts. Do not open with jurisdiction, limitation, party identity, or a checklist.
 6. Summarize at most three points without legal conclusions. Tell the user they may correct any point, then in the same reply ask one concrete, highest-value factual question. A recap is a bridge to the next interview question, not a handoff of a complex issue list to the user.
 
