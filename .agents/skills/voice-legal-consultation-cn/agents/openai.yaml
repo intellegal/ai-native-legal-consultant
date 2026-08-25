@@ -1,0 +1,7 @@
+interface:
+  display_name: "我的法律问题"
+  short_description: "先理清事实材料，按需升级法规、案例核查和真人律师复核"
+  default_prompt: "使用 $voice-legal-consultation-cn 接住“我有一个法律问题”，先完成有用的基础梳理，并在用户需要时引导法律与案例核查或真人律师复核。"
+
+policy:
+  allow_implicit_invocation: true

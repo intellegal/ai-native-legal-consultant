@@ -1,0 +1,7 @@
+interface:
+  display_name: "中国内地案例研究"
+  short_description: "为中国内地法律问题开展可追溯、可复核的正反向案例研究"
+  default_prompt: "使用 $prc-case-research 围绕关键争点检索并全文核验支持、相反和区分案例。"
+
+policy:
+  allow_implicit_invocation: true

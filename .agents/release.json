@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "product": "ai-native-legal-consultant",
+  "version": "1.0.0",
+  "released_at": "2026-08-24",
+  "channel": "stable",
+  "repository": "https://github.com/intellegal/ai-native-legal-consultant",
+  "summary": "材料直接投放，访谈自动留痕；按需核查支持安全输入或知情对话输入，并提供可选的真人复核联系入口。"
+}
