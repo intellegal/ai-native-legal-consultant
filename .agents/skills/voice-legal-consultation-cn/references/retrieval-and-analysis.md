@@ -25,9 +25,7 @@ Before searching, write:
 4. which source route answers each gap;
 5. expected deliverables and coverage limits.
 
-Create `003_内部工作区/003_案件梳理与案例检索建议.md`. If the opt-in choice expressly covered the already identified issue map, record it as the single matter-level approval and pass it to `$prc-case-research`; do not ask again. If the boundary was not clear, give one compact summary combining whole-matter scope, minimum-data boundary, and the default `3500 POINT` authorization boundary, then obtain one confirmation. Explain that the number is not a retrieval tier or spending target. Only a materially new matter outside the approved map or a call that would cross the authorization boundary requires renewed confirmation.
-
-The first user-facing upgrade invitation must not recite this internal scope, data, and point structure. The user's affirmative choice to verify the already identified matter records the default matter-wide/minimum-data/`3500 POINT` boundary internally. Expand it to the user only when scope is unclear, the user asks or chooses a lower ceiling, a materially new matter appears, or the next call would cross the ceiling.
+Record the issue map and existing upgrade choice in `003_内部工作区/004_法律与案例检索记录.md`; preserve an existing separate scope document, but create one only when it serves an actual discussion. Reuse clear authorization and pass it to `$prc-case-research`. Follow its hosted profile for scope continuity and interruptions.
 
 ## Current-law retrieval
 
@@ -37,21 +35,9 @@ Re-check time-sensitive law before finalization. Do not use an old court risk no
 
 ## Case research
 
-Use `$prc-case-research` faithfully:
+Use `$prc-case-research` and [its hosted consultation profile](../../prc-case-research/profiles/hosted-consultation.md). Pass the decision questions, fact/evidence ledger, current-law status, dates/locations, source choice and existing authorization. The shared method owns progressive query design, quality acceptance, local originals and resource interruptions; the provider strategy owns concrete retrieval design. Keep this host focused on consultation and avoid copying research quantities or spending rules here.
 
-- pass the confirmed decision questions, fact/evidence ledger, current-law status, relevant dates/locations, and approved boundary from the canonical workpaper;
-- default to `consultation-quality` and plan from the whole-matter issue map, never from point tiers or isolated single-search tasks;
-- allocate lanes across every controlling issue by decision impact, dependency, and uncertainty; cover legal terms, conduct/facts, evidence, defenses, procedure/remedy, supporting/contrary reasoning, synonyms, historical names, authority status, and semantic backfill;
-- normally capture `top_k=30` to `50` on focused keyword lanes when results can be projected and deduplicated locally; use smaller probes only for untested/noisy expressions or an explicit cost-sensitive mode;
-- search supporting, contrary, and gap paths;
-- normally review and save `20–50` judgment full texts across the matter's supporting, adverse, borderline, and distinguishing variants; treat this as a starting range rather than a quota or ceiling, and expand while material gaps remain; every case supporting a major conclusion must be full-text verified;
-- save every retrieved judgment full text as a separate Markdown file under `004_给你的结果/004_案例全文/`, maintain `000_案例全文索引.md`, and link relied-on files from the workpaper and user result; snippets, abstracts, case notes, and semantic processing do not count as full text;
-- record provenance, case number, court, date, procedure/finality, applicable-law version, facts, evidence, issue, reasoning, result, similarities, and differences;
-- compare basic facts, disputed issue, governing rule, and evidence/procedure—not result alone;
-- distinguish guiding cases, People’s Court Case Database reference cases, typical/gazette cases, and ordinary judgments;
-- use targeted official-Web discovery for official reference/typical cases, court publications, recent terminology, and omission checking, then verify identity and text;
-- write detailed research to `003_内部工作区/004_法律与案例检索记录.md` and return a concise handoff for the user report;
-- stop on whole-matter coverage and saturation, not the first usable case, an arbitrary quantity, or unused POINT allowance.
+Keep detailed research in `003_内部工作区/004_法律与案例检索记录.md` and return a concise handoff to the existing user result. Retain complete originals for closely read or cited judgments, link their local files and preserve provenance. A separate original-text index is optional. Treat jurisdiction, procedure, applicable-law version and authoritative source type as comparability factors, not just the outcome.
 
 Treat public cases used during the interview as seed leads. Verify their identity, full text when available, applicable-law version, comparability, later treatment, and contrary patterns before promoting them from `公开信息参考` to `案例观察`. If a public example cannot be verified or proves materially different, keep the original link visible and explain the downgrade rather than silently removing it.
 
@@ -85,8 +71,8 @@ Use confidence language tied to the basis: `支持较强`, `有条件支持`, `�
 - no model-memory-only major rule;
 - no stale or mismatched legal version;
 - no case-summary-only major citation;
-- every retrieved judgment full text has a local Markdown file, and every major case row links to it;
-- the 20–50 starting range was met or a concrete source/tool limitation was disclosed, with unresolved controlling issues expanded as needed;
+- every closely read or cited judgment has a complete local original, with local citations in the result and record;
+- research acceptance follows the shared purpose/coverage criteria, with actual unresolved gaps and interruptions disclosed;
 - no “case equals binding statute” claim;
 - contrary search completed;
 - local procedure not generalized nationally;

@@ -1,175 +1,76 @@
-# Lean Output, Workpaper, and Cache Schema
+# Report, Continuing Research Record and Local Judgments
 
-Use a report-first structure. The user should not need to review internal process files to understand the answer.
+## Default deliverables
 
-## Contents
+Use one concise report, one continuing research record, and complete local judgment files for every closely read or report-cited case. The reader should be able to understand and verify the report without a database membership.
 
-- Default Deliverables
-- Matter-Level Planning Document
-- Report
-- Workpaper
-- Compact Local Cache
-- Retention Conditions
-- Duplication Rule
-- Optional Structured Data
+- Standalone: `报告.md`, `_研究底稿/底稿.md` (the continuing research record), and `案例全文/` for required texts. Reuse a user's existing equivalents instead of creating parallel records.
+- Hosted consultation: use the paths in `../profiles/hosted-consultation.md`; the host result remains the sole user-facing analysis.
+- The record's case ledger is the default index. Add a separate full-text index only when many files, sharing or an existing workflow make it useful. Keep existing indexes and links working.
+- Do not routinely create a separate planning document, keyword matrix, calibration log, practice translation, quote archive, cache or CSV set. Use sections in the record. Add datasets/cache only for actual computation, empirical reproducibility or useful continuation beyond that record.
 
-## Default Deliverables
+## Required original-text retention and citations
 
-- Hosted legal consultation: `003_内部工作区/003_案件梳理与案例检索建议.md` before retrieval, `003_内部工作区/004_法律与案例检索记录.md` during research, and one Markdown file per retrieved judgment full text under `004_给你的结果/004_案例全文/`; return findings and local links to the host for the verified layer of `004_给你的结果/001_咨询结果.md`. Do not create standalone `报告.md` or a second user-facing case report.
-- Quick lookup: direct answer or one concise report; no persistent workpaper or cache by default.
-- Matter-level planning: `案件梳理与案例检索建议.md` as the only visible pre-retrieval deliverable; wait for confirmation before external case calls unless the user explicitly waives the gate.
-- Ordinary research: `报告.md`; add `_研究底稿/底稿.md` only when later verification, continuation, or handoff is likely.
-- Empirical or reproducible research: `报告.md` plus `_研究底稿/底稿.md`.
-- Add a compact local cache when repeated use or costly reacquisition is reasonably likely.
-- In case-research work, save every retrieved judgment full text locally as Markdown by default. Add other source snapshots or structured data only when a retention condition below applies.
+Save the complete original judgment body actually obtained, without paraphrase, for every closely read or judgment-cited case. Keep provenance: case number, title, source/type/ID, court, decision date, procedure, original URL, retrieval time, text completeness, identity/version caveat and review status. Store original online URLs here as secondary provenance, not as the report's only judgment citation.
 
-## Matter-Level Planning Document
+Use a filesystem-safe stable name. Do not overwrite a different judgment or source variant. An optional helper `scripts/save_case_fulltext.py` stores supplied text and metadata but cannot certify that a source is complete or has been closely read. Validate the body and identity through the source workflow; acquisition, local saving, close reading and verification remain distinct.
 
-Use this document only when the request must be decomposed before retrieval. Keep it concise and easy to revise. Use short prose sections for the research goal and boundary, relevant facts and uncertainties, provisional legal routes, proposed research questions, questions routed away from case research, proposed order and scope, and the user's confirmation.
+Snippets, abstracts, editorial case notes and semantic reconstructions must not be filed as verified judgment full text. When a required original is unavailable, retain the source lead and explicit gap in the record; do not reconstruct it or cite it as a verified judgment. Use lawful original access or ask about a material source change under the user's source choice.
 
-For each proposed research question, state only the neutral question, why it matters, and the recommended source. Do not expose internal field schemas, research cards, full keyword matrices, or speculative query trees. Preserve the confirmed document as the initial scope record; update it only when the user changes scope or a later discovery requires material expansion.
+Cite the **local judgment file** from the report and record. Inside distributable Markdown, use relative links from each actual file location; include the judgment files when sending the report. For example, a standalone report links `./案例全文/<file>.md`, and its record links `../案例全文/<file>.md`. A hosted result links `./004_案例全文/<file>.md`; its record links `../004_给你的结果/004_案例全文/<file>.md`. Encode URL-reserved characters in link destinations, not in actual filenames. In chat, use verified absolute file links.
 
-Do not create a full workspace merely to draft this document. In hosted consultation, keep it inside `003_内部工作区/` and let the voice host own confirmation. After confirmation, create the report, workpaper, cache, or structured data only when the normal retention conditions justify them.
+## Concise report
 
-## Hosted Consultation Record
+Lead with the answer and its controlling conditions. Include decisive cases, original reasoning, similarities/differences, the strongest material adverse path, relevant evidence/procedure/action implications, and the boundary of coverage. Keep current rules, case observations, practical inferences and unresolved verification separate. State the applicable-law version; verify current deadlines and official requirements independently.
 
-Create `003_内部工作区/004_法律与案例检索记录.md` from `assets/咨询案例检索记录模板.md` when absent. It is the canonical case-research record for the matter and should contain:
+Statistical claims need a defined unit and sampling design; case existence, a filled coverage cell, or ranked hit counts do not prove prevalence or a numeric win probability. Put important uncertainty beside the affected conclusion.
 
-- confirmed boundary, the matter-wide issue map, current-law status, authorization boundary, and any real balance limit;
-- coverage status for support, contrary, fact/evidence, procedure/remedy, authority/recent, semantic/alternate expressions, and full text;
-- one row per material retrieval round rather than every API call;
-- retained supporting, contrary, distinguishing, background, and excluded cases with full-text status and local Markdown path;
-- conclusion trace and decision-changing limitations;
-- tool, balance, source, or coverage constraints.
+## Optional Original-Excerpt Presentation
 
-The host's `004_给你的结果/001_咨询结果.md` remains the only user-facing analysis. `004_给你的结果/004_案例全文/` is a source archive for verification, not a competing report. Do not duplicate long analysis across the consultation record, result, and source files.
+Use this mode when original judicial wording helps explain a material characterization, reasoning difference, evidence rule, or limiting condition, or when the user asks for lawyer-style case presentation. Add an excerpt column to the relevant existing table rather than imposing a new table on every report. Select the key cases; do not reproduce every collected judgment or force a fixed paragraph or word count.
 
-## Local Judgment Full-Text Archive
+A compact Markdown layout is:
 
-For hosted consultation, create `004_给你的结果/004_案例全文/000_案例全文索引.md` and save every successfully retrieved judgment full text beside it. For standalone research, use `案例全文/` unless the user supplied another output structure.
+```markdown
+| 裁判认定（概括） | 案号、法院及日期 | 关键事实/争点 | 裁判要旨摘录（原文） | 研究提示/适用差异 |
+|---|---|---|---|---|
+```
 
-Each judgment file must contain a compact metadata block followed by the complete returned judgment text:
+Adapt the columns to the task; add a sequence number or group by a full-text-verified reasoning pattern only when useful. Keep grouped cases' individual limitations visible. Treat visual examples as presentation references, not verified corpora or universal case categories; do not copy their substantive holdings, colors, or merged-cell layouts into all research.
 
-`本地编号 | 案名 | 案号 | 来源/类型/ID | 法院 | 裁判日期 | 程序 | 原始链接 | 获取时间 | 文本状态 | 身份或版本限制`
+### Select and Verify the Excerpt
 
-Use a filesystem-safe name such as `NNN_案号_法院_裁判日期.md`; replace invalid filename characters and fall back to a stable source ID when necessary. The index records the issue role, conclusion IDs, and relative local link. The case ledger and user-facing report must link to the local file whenever a case supports, contradicts, or materially distinguishes a conclusion.
+- Extract the paragraph or connected paragraphs from the verified original judgment, usually the court's reasoning. Preserve the facts, antecedents, conditions, exceptions, burden language, negation, and remedy boundaries needed to understand the passage. Do not substitute an author's summary, database-generated holding, party allegation, or OCR from a screenshot for judicial original text.
+- Preserve the wording and its sequence. Mark omitted text explicitly, for example with `〔中略〕`; separate non-contiguous passages rather than stitching them into one apparent paragraph. Do not omit language that materially weakens or qualifies the proposed conclusion. Put researcher explanations outside the quotation.
+- Bold the exact sentence or clause that answers the research question using Markdown `**...**`. Include its operative qualification or negation. Highlight relevant adverse reasoning and limitations as carefully as favorable reasoning; do not bold an entire long excerpt or mere search-term hits.
+- State once near the table: `加粗为本报告标注；如原文已有强调，另行注明。` Original-source emphasis, omissions, and any disclosed transcription corrections must remain distinguishable from editorial highlighting.
+- Give each excerpt a retrievable source and locator: case number, court/date, local original-text file, and an actual page, paragraph, or section with opening words. Do not invent official paragraph numbers. Check the quoted passage and bold spans against that source before delivery.
+- If the original cannot be verified, leave the excerpt unavailable with a clear `原文待核验` note or omit the column for that case. A labeled summary may appear outside the original-text column; never put reconstructed prose in quotation marks.
+- Administrative replies, statistics-agency answers, statutes, and editorial case notes are different source types. Present them separately or label their excerpt as `答复原文`, `条文原文`, or `编者摘要`; never present them as a court's holding. Follow applicable quotation and reuse limits for the actual source.
 
-Only a detail/original-text response containing the judgment body counts toward the normal matter-level `20–50` full-text starting range. Search snippets, abstracts, case notes, and processed semantic text may remain discovery records but must not be mislabeled as judgment full text. The range is not a ceiling: expand while unresolved controlling issues or new material differences remain. If the comparable pool, tool access, or a user-selected lower authorization boundary prevents 20, record that concrete reason rather than silently lowering the target.
+### Keep the Table Readable
 
-Use `./004_案例全文/<file>.md` for links from `004_给你的结果/001_咨询结果.md`, `./<file>.md` from `000_案例全文索引.md`, and `../004_给你的结果/004_案例全文/<file>.md` from `003_内部工作区/004_法律与案例检索记录.md`.
+Use quotation marks for the original passage and put the locator or source link outside the quotation. Escape literal pipe characters in Markdown table cells; use `<br>` for necessary paragraph breaks without changing the underlying text. If a faithful excerpt makes the table unwieldy, use a short comparison table plus case-by-case blockquotes, with the same selective bolding and citations. Do not shorten a legally necessary qualification merely to fit a cell.
 
-## Report
+The initializer's `--case-excerpts` flag adds an empty excerpt-table scaffold only to a new report; it supplies no cases or quotations and does not overwrite an existing report. Keep verified excerpts and locators in existing case notes/cache when reuse is needed rather than adding a separate quote archive by default.
 
-Select only sections that help answer the request:
+## One continuing research record
 
-- conclusion summary;
-- core legal and factual analysis;
-- key cases and outcome differences;
-- evidence, procedure, deadline/material, and action implications when relevant;
-- research boundary and material uncertainty.
+Use `assets/研究记录模板.md`, adapting the topic and actual paths. Keep:
 
-Keep detailed query history, rejected candidates, and calibration mechanics out of the report unless they materially qualify a conclusion.
+1. The user decision, scope/source, fact/evidence status, issue dependencies and explicit user constraints.
+2. A living query/coverage map: intent, source-specific expression/filters, material discoveries and missing issues. Use an explicit table for complex research; do not force a taxonomy on a narrow question.
+3. Material rounds: engine total, requested/returned and actually reviewed counts, capture status, original texts acquired/saved/read, new judgments/disputes/coverage, query change, next move and purpose-based stop reason. Record failed calls separately from zero hits.
+4. A case ledger with local links, original-text/review status, controlling issue, court reasoning, outcome, source mirrors, dispute/batch relationships, relevance and affected conclusions. Metadata deduplication is provisional; preserve original-text identity evidence when it affects the sample.
+5. Known omitted-case blind/diagnostic recovery when available, with failure mechanism and residual limit.
+6. Conclusion trace, pending current-law checks, operational interruptions and a concrete next-step bookmark for resumption or key-case follow-up.
 
-## Workpaper
+Do not duplicate the report's prose. Case roles are retrieval shorthand, not a substitute for explaining the court's actual reasoning. Count database records, judgment documents, adjudicative stages and independent disputes separately where the distinction matters.
 
-Use one compact Markdown file with these sections.
+## Optional computation and reuse
 
-### Research Boundary
+The initializer's `--structured-data` creates tables for computation or machine-readable handoff; `--local-cache` creates compact reusable case/query records; `--fulltext-index` adds an index. They are off by default. `--case-excerpts` adds an optional excerpt scaffold only to a newly created standalone report. Existing files are never overwritten.
 
-Record the question, scope, exclusions, local-material role, user intent, and important assumptions.
+Cache stable verified text and metadata; refresh later treatment, unresolved identity or new date windows when needed. A broader scope, stale time range, Top-K truncation, overflow or failed earlier call cannot serve as complete current coverage. Source variants remain mapped even when one canonical judgment is retained.
 
-### Retrieval Trail
-
-Use one row per material round, not one row per API call:
-
-`round_id | path_or_purpose | query_and_filters | reviewed | valid | material_change | next_step_or_stop_reason`
-
-Fold extracted expressions, noise patterns, and query revisions into `material_change`. Omit routine calls that did not affect coverage or judgment.
-
-### Case Ledger
-
-Use one row per retained case:
-
-`wp_id | case_no | source_or_id | local_fulltext | fulltext_status | role | controlling_point | conclusion_ids | exclusion_or_caveat | snapshot`
-
-Recommended `role` values: `support`, `contrary`, `distinguish`, `background`, `excluded`.
-
-Recommended `fulltext_status` values: `verified`, `summary_only`, `metadata_only`, `id_mismatch_refetched`, `needs_review`.
-
-Keep detailed notes only for cases that support, contradict, or materially distinguish a conclusion. Compress routine exclusions by recurring reason where individual traceability is unnecessary.
-
-### Conclusion Trace
-
-Use one row per major report conclusion:
-
-`conclusion_id | concise_claim | supporting_cases | contrary_or_limiting_cases | basis | confidence | unresolved_issue`
-
-Use `basis` values: `案例观察`, `现行规则`, `实践推论`, `需核验`.
-
-### Pending Verification
-
-List unresolved source conflicts, under-sampled paths, current-law checks, and questions that could change a conclusion.
-
-## Compact Local Cache
-
-Use a cache only when continuation, recurring research, incremental time-window updates, or expensive reacquisition is likely. Keep it internal unless the user requests it.
-
-### Case Cache
-
-Prefer one record per source case:
-
-`cache_version | source | source_type | source_id | case_no | case_no_normalized | title | court | decision_date | procedure | document_type | url | retrieved_at | fulltext_status | facts_excerpt | reasoning_excerpt | result_excerpt | controlling_point | chain_status | caveat`
-
-Store metadata and the fields needed to avoid another retrieval. Keep excerpts compact. The local judgment archive above is mandatory for every judgment full text retrieved; this compact cache remains optional.
-
-### Search Cache
-
-Prefer one record per materially reusable search:
-
-`cache_version | endpoint | query_normalized | filters_normalized | scope_dates | result_total | retained_case_keys | retrieved_at | material_observation | reuse_limit`
-
-Use the query, structured filters, source type, time range, and retrieval date as the cache identity. Do not reuse a cached search when the current scope is broader, the underlying time window has advanced, or the earlier result was incomplete.
-
-### Reuse Rules
-
-- Check normalized案号 and source ID before a detail call.
-- Reuse stable judgment text and saved metadata.
-- Refresh later appellate or retrial status when it matters.
-- For a new date range, retrieve only the uncovered date delta and merge it with the cache.
-- Preserve a separate source record when ordinary and authoritative databases contain materially different texts for the same case.
-- Never store credentials or authentication headers.
-
-## Retention Conditions
-
-Retain an additional artifact only when at least one condition applies:
-
-- repeated retrieval, continuation, or incremental update is likely;
-- computation, statistics, bulk coding, or automated deduplication requires structured data;
-- the user explicitly requests a dataset, case list, original texts, or reproducible package;
-- another person or agent will continue the work and needs machine-readable handoff;
-- the source is unstable, inaccessible, or difficult to reacquire;
-- an ID/案号 mismatch or source inconsistency requires preserving evidence;
-- a central conclusion depends on the exact text and the case number alone is insufficient for stable review.
-
-Otherwise keep raw responses, temporary matrices, and intermediate lists transient.
-
-## Duplication Rule
-
-- Report: conclusions, reasoning, key authority, practical implications, and limits.
-- Workpaper: provenance, material retrieval changes, case status, exclusions, and conclusion trace.
-- Cache: reusable normalized records and compact excerpts.
-- Source archive: exact returned judgment text plus provenance metadata only.
-
-Do not copy report prose into the workpaper, duplicate the same excerpt across cache fields, or reproduce full judgments in the report.
-
-## Optional Structured Data
-
-Create structured files only when a retention condition applies. Prefer a minimal set:
-
-- `检索轨迹.csv`: the retrieval-trail fields above;
-- `案例台账.csv`: the case-ledger fields above;
-- `结论溯源.csv`: the conclusion-trace fields above;
-- `cache/案例缓存.csv`: compact reusable case records;
-- `cache/检索缓存.csv`: materially reusable query records.
-
-Do not recreate a multi-file workspace unless the user explicitly requires separate datasets for processing, computation, or handoff.
+Field names in `scripts/init_case_research_workspace.py` support these distinctions. Do not store credentials. Do not retain raw responses or duplicate prose merely because a tool can produce them. Required close-read/cited original judgments remain mandatory regardless of optional caches.

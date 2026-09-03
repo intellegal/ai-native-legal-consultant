@@ -2,7 +2,7 @@
 
 Use this guide when case research may inform real-world action, not only academic description. The goal is to translate裁判口径 into evidence, procedure, deadline/material, and action implications while keeping every claim auditable.
 
-For a whole matter or multi-issue dispute, read `matter-decomposition.md` first and obtain confirmation of the human-readable research plan before external case retrieval. In hosted consultation, reuse the voice host's fact/evidence ledger and let the host obtain the single spoken confirmation. Use this guide to enrich the confirmed issues; do not use its categories as a preset issue universe.
+For a whole matter or multi-issue dispute, read `matter-decomposition.md` first, reusing the user's requested or host-confirmed scope and clarifying only material uncertainty. Use this guide to enrich those issues; do not use its categories as a preset issue universe.
 
 ## Intent Archetypes
 
@@ -18,7 +18,7 @@ Classify the user's likely intent before finalizing the search plan. If inferred
 
 ## Practice Map
 
-Build only the task-relevant subset as an internal working analysis after matter-level scope is confirmed, or directly for an atomic query. Revise it after full-text review. Treat the schema below as optional reasoning support, not a required table, research card, or user-facing deliverable. Integrate useful findings into the report; do not create a separate practice-translation file by default.
+Build only the task-relevant subset as an internal working analysis within the requested matter-level scope, or directly for an atomic query. Revise it after full-text review. Treat the schema below as optional reasoning support, not a required table, research card, or user-facing deliverable. Integrate useful findings into the report; do not create a separate practice-translation file by default.
 
 `intent, issue_path, likely_claim_or_defense, facts_to_prove, burden_notes, evidence_types, evidence_form, evidence_defects, procedural_path, deadline_or_time_limit, required_filings, case_differences_to_track, source_basis, verification_status`
 
@@ -55,7 +55,7 @@ Track:
 
 ## Report Integration
 
-Integrate only the material that changes the answer or the user's next step. Usually this means the relevant subset of: controlling case pattern, facts and burden of proof, evidence strengths or defects, procedural path, outcome differences, and action options. Put uncertainty beside the affected conclusion instead of adding a generic checklist. In hosted consultation, write detailed provenance to `003_内部工作区/004_法律与案例检索记录.md` and return a concise synthesis to the voice host for the user's report.
+Integrate only the material that changes the answer or the user's next step. Usually this means the relevant subset of: controlling case pattern, facts and burden of proof, evidence strengths or defects, procedural path, outcome differences, and action options. Put uncertainty beside the affected conclusion instead of adding a generic checklist.
 
 Do not turn the report into generic legal advice or reproduce the working map as a separate file. Keep source provenance and unresolved verification in the single workpaper when one exists; keep substantive evidence, procedure, and action analysis in the report.
 

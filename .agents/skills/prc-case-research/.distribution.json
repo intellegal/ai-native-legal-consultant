@@ -1,0 +1,101 @@
+{
+  "files": {
+    "SKILL.md": {
+      "output_sha256": "2ab6fa5436b7d681c12a5e701479ee7e105cf1a341c4de5f9fc480fe58b817d2",
+      "source": "SKILL.md",
+      "source_sha256": "2ccd1a12caf6403a484ff66fcf7895f7fabbaf49ce3786c71ad6e212f5b01229"
+    },
+    "agents/openai.yaml": {
+      "output_sha256": "5d9ca84ac3ac7223a81d6c5ca83f4a64a48d0b5bd154fb6843b5bc8d8d2db1ae",
+      "source": "maintenance/openai.public.yaml",
+      "source_sha256": "5d9ca84ac3ac7223a81d6c5ca83f4a64a48d0b5bd154fb6843b5bc8d8d2db1ae"
+    },
+    "assets/咨询案例检索记录模板.md": {
+      "output_sha256": "23f4ac72c5c74bde92e2a5a757cb09a8f18334804f28898214e752ae2cc77c97",
+      "source": "assets/研究记录模板.md",
+      "source_sha256": "23f4ac72c5c74bde92e2a5a757cb09a8f18334804f28898214e752ae2cc77c97"
+    },
+    "assets/案例全文文件模板.md": {
+      "output_sha256": "7cafc38cad0a899bd7a2aa68d5a5305ca4a62b28e4bafde2dcf1dbbbf341a1df",
+      "source": "assets/案例全文文件模板.md",
+      "source_sha256": "7cafc38cad0a899bd7a2aa68d5a5305ca4a62b28e4bafde2dcf1dbbbf341a1df"
+    },
+    "assets/案例全文索引模板.md": {
+      "output_sha256": "e326402df84f4bca88c39185585ab1fb1b267a249be7d1fe4138b94721aa0dfe",
+      "source": "assets/案例全文索引模板.md",
+      "source_sha256": "e326402df84f4bca88c39185585ab1fb1b267a249be7d1fe4138b94721aa0dfe"
+    },
+    "assets/研究记录模板.md": {
+      "output_sha256": "23f4ac72c5c74bde92e2a5a757cb09a8f18334804f28898214e752ae2cc77c97",
+      "source": "assets/研究记录模板.md",
+      "source_sha256": "23f4ac72c5c74bde92e2a5a757cb09a8f18334804f28898214e752ae2cc77c97"
+    },
+    "profiles/hosted-consultation.md": {
+      "output_sha256": "395e34b68462f7bea58e7fabd23f23b22b7bd31f9b979436bea46417323a8696",
+      "source": "profiles/hosted-consultation.md",
+      "source_sha256": "395e34b68462f7bea58e7fabd23f23b22b7bd31f9b979436bea46417323a8696"
+    },
+    "providers/yuandian.md": {
+      "output_sha256": "1e4ba4046438564e6ffc1342331f14e480b20edd393aacb3009a187f12fa162a",
+      "source": "providers/yuandian.md",
+      "source_sha256": "1e4ba4046438564e6ffc1342331f14e480b20edd393aacb3009a187f12fa162a"
+    },
+    "references/fulltext-comparison-and-deduplication.md": {
+      "output_sha256": "4b69f93cf19d4cddfbcae1179340fe40e3b92cf23868e41a04f7f48c86f28f4f",
+      "source": "references/fulltext-comparison-and-deduplication.md",
+      "source_sha256": "4b69f93cf19d4cddfbcae1179340fe40e3b92cf23868e41a04f7f48c86f28f4f"
+    },
+    "references/keyword-matrix.md": {
+      "output_sha256": "f6938db650808353cc2e547c6f51fa0839154cc82d8c1c7e295fbe1c736d677f",
+      "source": "references/keyword-matrix.md",
+      "source_sha256": "f6938db650808353cc2e547c6f51fa0839154cc82d8c1c7e295fbe1c736d677f"
+    },
+    "references/matter-decomposition.md": {
+      "output_sha256": "36de549981ff645f3b0c30621e18e781e13c342978ae727917af41d988601129",
+      "source": "references/matter-decomposition.md",
+      "source_sha256": "36de549981ff645f3b0c30621e18e781e13c342978ae727917af41d988601129"
+    },
+    "references/output-schema.md": {
+      "output_sha256": "e2ba95db4bea70efd67e93d36d27e975b0c3d97f125c07269a771a66564d9f80",
+      "source": "references/output-schema.md",
+      "source_sha256": "e2ba95db4bea70efd67e93d36d27e975b0c3d97f125c07269a771a66564d9f80"
+    },
+    "references/practical-analysis.md": {
+      "output_sha256": "87670fc4fcc5297ca6d76e3ea005f0701c470229a9dea038df5c12f3cb883de1",
+      "source": "references/practical-analysis.md",
+      "source_sha256": "87670fc4fcc5297ca6d76e3ea005f0701c470229a9dea038df5c12f3cb883de1"
+    },
+    "references/research-method.md": {
+      "output_sha256": "b50d26c63ab17ca97f8147c610a2624a12b4fe9d7770c6d6fdb0c7f7bf5b454a",
+      "source": "references/research-method.md",
+      "source_sha256": "b50d26c63ab17ca97f8147c610a2624a12b4fe9d7770c6d6fdb0c7f7bf5b454a"
+    },
+    "references/yuandian-optimization.md": {
+      "output_sha256": "c29f2c3df561511c7f336d9795594aae53d2ade03ad4d09386513f2c72b383f9",
+      "source": "references/yuandian-optimization.md",
+      "source_sha256": "c29f2c3df561511c7f336d9795594aae53d2ade03ad4d09386513f2c72b383f9"
+    },
+    "scripts/init_case_research_workspace.py": {
+      "output_sha256": "ce274671193e6d9213d76db983f204938d70dda17d3668f724d37306c5664a86",
+      "source": "scripts/init_case_research_workspace.py",
+      "source_sha256": "ce274671193e6d9213d76db983f204938d70dda17d3668f724d37306c5664a86"
+    },
+    "scripts/save_case_fulltext.py": {
+      "output_sha256": "2a00af0eec1d4bb35f48ba34249b697ca1182d568c81854a308069deb9650a33",
+      "source": "scripts/save_case_fulltext.py",
+      "source_sha256": "2a00af0eec1d4bb35f48ba34249b697ca1182d568c81854a308069deb9650a33"
+    }
+  },
+  "hash_normalization": "UTF-8 with LF line endings",
+  "routing_fragment": {
+    "sha256": "0d203b340f0aebf4ba2b997266e6720c4cd96b8b276a7395438c3493acb12567",
+    "source": "maintenance/public-routing.md"
+  },
+  "schema": 1,
+  "source_skill": "case-resarch",
+  "supported_providers": [
+    "yuandian"
+  ],
+  "target_skill": "prc-case-research",
+  "version": "2.6.1"
+}

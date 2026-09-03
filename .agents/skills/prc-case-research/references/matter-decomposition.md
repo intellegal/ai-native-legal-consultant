@@ -1,6 +1,6 @@
 # Matter-Level Research Planning
 
-Use this guide only when the incoming request is broader than one clear case-research question. Convert the matter into a concise, user-confirmed research scope before external case retrieval. When the skill is hosted by `$voice-legal-consultation-cn`, reuse the canonical matter workpaper and let the host own the spoken confirmation; do not restart intake or add a second approval turn.
+Use this guide only when the incoming request is broader than one clear case-research question. Organize the matter into a concise research scope, reusing the user's request and any host confirmation. Ask only when a material boundary remains unclear.
 
 ## Build from the Decision
 
@@ -32,7 +32,7 @@ Finding cases can verify that a judicial approach exists or show how courts reas
 
 ## Produce the Human-Review Plan
 
-Create one concise Markdown document named `003_案件梳理与案例检索建议.md`. In a hosted consultation, place it under `003_内部工作区/`. Prefer clear prose and short numbered questions over cards, dense tables, or internal schemas. Include only:
+Record the plan in the single research record. Create a separate `案件梳理与案例检索建议.md` only when a complex scope needs a distinct review or the user/host requests it. Prefer clear prose and short numbered questions over cards, dense tables, or internal schemas. Include only:
 
 1. **研究目标与边界**: the user's practical decision, the intended depth, and material assumptions;
 2. **案情整理**: the relevant parties, events, documents, established facts, disputed facts, missing facts, and material dates;
@@ -40,12 +40,12 @@ Create one concise Markdown document named `003_案件梳理与案例检索建�
 4. **建议进一步研究的关键问题**: for each proposed question, state the neutral question, why it can change the matter, and the recommended source in a short paragraph;
 5. **不建议进行案例检索的问题**: identify issues better answered by current law, official court materials, evidence, clarification, or professional expertise;
 6. **拟定检索顺序与范围**: explain dependencies, priority, material scope, and exclusions without exposing the full keyword design;
-7. **请用户确认**: ask the user to correct the facts, add, remove, merge, or reprioritize questions, and confirm whether retrieval should begin.
+7. **范围与缺口**: carry forward the scope already requested or confirmed; ask for correction only when an unresolved ambiguity would materially change the work.
 
-Do not begin external case calls until confirmation unless the user explicitly waives the gate. In a hosted consultation, return the plan to the voice host, which gives one short spoken scope summary and records the user's confirmation in the canonical workpaper. A limited check of user-provided materials, verified local sources, or current authoritative law is allowed when necessary to frame the plan; label any resulting view as preliminary.
+Do not add a blanket approval gate where the user has already requested research. Use local materials and appropriate initial source checks to frame the questions, label preliminary views, and clarify a genuinely unclear or new scope before expanding beyond the request.
 
 ## Execute and Reopen Scope
 
-After confirmation, convert the approved questions into internal research units and use the normal adaptive retrieval loop. Do not require the user to approve keywords, synonyms, result depth, full-text pulls, or ordinary contrary and gap-filling moves.
+Convert the requested/confirmed questions into internal research units and use the shared progressive retrieval loop. Do not require the user to approve keywords, synonyms, result depth, full-text pulls, or ordinary contrary and gap-filling moves.
 
-Update the plan and request confirmation again only when a discovery materially expands cost or scope, changes the controlling legal route or user decision, or creates a new issue that cannot reasonably fit within an approved question. In the final report, synthesize interactions across the approved questions rather than presenting isolated research answers.
+Supplementary retrieval is driven by whether the research purpose is sufficiently met. New expressions, reasoning and cases inside the matter are ordinary iteration. Ask again only for a materially different task outside the request, a relevant limit the user explicitly set, or an actual operational interruption requiring their choice. Preserve completed work and ask on confirmed credit exhaustion/insufficiency. Synthesize interactions between questions rather than isolated answers.

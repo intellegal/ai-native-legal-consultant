@@ -83,7 +83,7 @@ After the user’s problem, fact/material status, main contradictions, triggered
 
 > 这是结合你提供的信息和已引用公开资料形成的初步判断；公开资料可能不完整或不是最新。如果已经够用可以停；希望更准确时，我可以继续用法律数据库核对现行法规、案例全文和相反观点。
 
-If no public source was used, replace “已引用公开资料” with “目前没有完成公开来源或数据库核查”. Only if the user asks for more or chooses verification, say: “这需要一个免费的元典 Key，我现在带你获取并配置。” Do not repeat the facts, issue map, search plan, `3500 POINT`, or the entire privacy/setup explanation. Open the registration page when browser control is available; reveal the Key-input warning and other technical detail only when that action becomes current. Do not repeatedly upsell after a decline.
+If no public source was used, replace “已引用公开资料” with “目前没有完成公开来源或数据库核查”. Only if the user asks for more or chooses verification, say: “这需要一个免费的元典 Key，我现在带你获取并配置。” Do not repeat the facts, issue map, search plan, or the entire privacy/setup explanation. Open the registration page when browser control is available; reveal the Key-input warning and other technical detail only when that action becomes current. Do not repeatedly upsell after a decline.
 
 ## Resume
 

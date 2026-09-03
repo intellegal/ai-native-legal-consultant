@@ -1,6 +1,6 @@
-# YuanDian Retrieval, Coverage, and Cost Control
+# Yuandian Retrieval and Cost Optimization
 
-Use this reference when retrieving cases through YuanDian or when the user asks to control retrieval cost. In hosted legal consultation, decision value and defensible coverage take priority over minimizing points; cost control prevents waste and records limits rather than forcing the smallest possible search. Recheck official documentation when tool schemas or prices may have changed.
+Use this as the single operational reference for YuanDian. The provider strategy is in `../providers/yuandian.md`; quality acceptance and exhaustion handling belong to `research-method.md`. Recheck documentation when actual schema or price uncertainty matters; do not impose a routine pricing or approval gate.
 
 ## Official Sources
 
@@ -11,39 +11,68 @@ Use this reference when retrieving cases through YuanDian or when the user asks 
 - Case details: https://open.chineselaw.com/api-square/9/
 - Machine-readable full documentation: https://open.chineselaw.com/llms-full.txt
 
-The public YuanDian homepage prices below were checked on 2026-08-23. YuanDian pricing and schemas can change, so query `yuandian_get_api_doc` before every matter's first chargeable call; live MCP documentation overrides this table.
+The prices below were verified on 2026-09-03 against the official API-detail JSON (`price` and `chargeType`) for IDs 16, 7, 8, and 9, and independently cross-checked with `yuandian_get_api_doc`; both sources agreed. This was a documentation/metadata check, not a chargeable case-retrieval or deduction test. The historical schema, defaults, and retrieval-behavior observations below were recorded on 2026-08-26 and were not revalidated by this price refresh. Static documentation pages may lag behind live metadata, consult `yuandian_get_api_doc` when live metadata is needed. This dated table is informational, not a mandatory pre-call gate or a spending allowance.
+
+Official live pricing records: [semantic](https://open.chineselaw.com/api/apis/16), [ordinary keyword](https://open.chineselaw.com/api/apis/7), [authoritative keyword](https://open.chineselaw.com/api/apis/8), [details](https://open.chineselaw.com/api/apis/9).
 
 ## Cost Model
 
 | Interface | Tool | Published price |
 |---|---|---:|
-| Case semantic search | `yuandian_case_vector_search` | 10 POINT/call |
-| Ordinary-case keyword search | `yuandian_rh_ptal_search` | 10 POINT/call |
-| Authoritative-case keyword search | `yuandian_rh_qwal_search` | 10 POINT/call |
-| Case details | `yuandian_rh_case_details` | 5 POINT/call |
+| Case semantic search | `yuandian_case_vector_search` | 15 POINT/call |
+| Ordinary-case keyword search | `yuandian_rh_ptal_search` | 5 POINT/call |
+| Authoritative-case keyword search | `yuandian_rh_qwal_search` | 5 POINT/call |
+| Case details | `yuandian_rh_case_details` | 10 POINT/call |
 
-Use live prices as accounting inputs, not as a way to define research depth. For `consultation-quality`, check prices and available balance before the first chargeable call, record live unit prices, and track cumulative use. Do not classify the matter or choose issue coverage from any fixed POINT tier. The controlling issue map determines the search plan. Unless the host records a lower user-selected boundary, one verified consultation may use up to `3500 POINT`; this is an authorization ceiling, not a target. If live prices are unavailable, do not make a chargeable call. Pause only before the next call would cross the confirmed ceiling or when a discovery opens a materially new matter outside the approved scope. If the actual balance is inadequate, disclose which unresolved paths could not be completed.
+Prices are dated operational information, not permanent constants or research-intensity tiers. No default credit allowance or spending target applies. Respect a limit explicitly supplied by the user. On a credible insufficient-credit response, confirm the condition if unclear, save the work, stop further retrieval and ask the user how to proceed; do not run speculative chargeable retries. Do not assert exhaustion from an unrelated error.
 
 ## Semantic Search
 
-- `return_num` defaults to 45. The current documentation does not state a hard maximum. Live tests requesting 50 and 60 returned 50 and 60 unique results respectively, and each call deducted the same 15 points.
-- Do not describe 50 as the semantic endpoint’s maximum. For consultation-quality reconnaissance, 45 to 60 is a useful broad capture range when local caching and compact field projection are available; it is not a hard minimum or maximum.
-- When results can be cached outside the main context, prefer a broad first capture that avoids paying again merely to enlarge the same query. Inspect the cached results in smaller review batches.
+- `return_num` defaults to 45. The current documentation does not state a hard maximum. Historical tests recorded on 2026-08-26 requested 50 and 60, returned 50 and 60 unique results respectively, and deducted the same 15 points per call. These retrieval/deduction tests were not rerun during the 2026-09-03 price check.
+- Do not describe 50 as the semantic endpoint’s maximum. Choose each capture size from the task and actual transport capacity; the historical test values are not recommended defaults.
+- When results can be cached outside the main context, a broad first capture can avoid paying again merely to enlarge the same query. Inspect the cached results in smaller review batches.
 - When the raw response will enter the main model context, use a smaller return size because a 50-result live response was about 60,000 characters and a 60-result response about 71,000 characters.
-- `rewrite_flag` defaults to `true`. Keep it on for exploratory natural-language retrieval; turn it off when testing a controlled formulation and query drift would be harmful.
+- Official API documentation retrieved on 2026-09-03 describes `rewrite_flag` as default `false`, superseding the earlier recorded `true` assumption. Set it explicitly: enable for useful exploratory rewriting and disable for controlled formulations. Check the actual exposed tool schema if its behavior differs.
 - Apply known `wenshu_filter` fields early: case category, cause, document type, court, court level, region, date, authoritative-only flag, and authoritative source.
 - Results contain processed and organized case content with similarity scores, not verbatim original judgments. Use them for reconnaissance and backfill, not as the final textual basis for a major conclusion.
 - The default search already covers ordinary and authoritative cases. Run a separate authoritative search only when source type, authority status, or authoritative-case recall materially matters.
 
+## Keyword Syntax
+
+
+For `rh_ptal_search` and `rh_qwal_search`:
+
+- `qw`: full-text terms split by spaces.
+- `fxgc`: analysis or reasoning terms split by spaces; available for ordinary cases.
+- `search_mode`: global connector; only `and` and `or` are confirmed.
+- `title`: terms split by spaces and all title terms must hit.
+- `ay`, `jbdw`, `xzqh_p`, `wszl`, `source`, and date fields: structured filters; array values are OR within the field.
+- `top_k`: default 10 and maximum 50 per call.
+
+Do not pass nested Boolean expressions, `NOT`, or proximity operators such as `NEAR/5` into `qw`. For `A AND (B OR C)`, run `A B` and `A C` as separate `and` queries only after the first branch shows that the distinction is useful. For `A AND NOT X`, run `A` and filter or downrank candidates containing `X` after review.
+
+Use `fxgc` first when the target is an express judicial holding. Use `qw` when the relevant language may appear in facts, evidence, party submissions, appraisal reports, or other portions of the judgment.
+
+
 ## Keyword Search
 
-- `top_k` defaults to 10 and is capped at 50. Published pricing is per call, not per returned result. In consultation-quality mode, use `top_k=30` to `50` for focused lanes that can be projected locally; reserve smaller calls for untested/noisy expressions or strict cost-sensitive work.
+- `top_k` defaults to 10 and is capped at 50. Published pricing is per call, not per returned result.
+- `top_k` is a capture-size request, not a relevance, diversity, or coverage guarantee. Record hit total, requested `top_k`, returned count, and capture status separately.
 - `qw` searches full-text terms. `fxgc` searches the analysis/reasoning field for ordinary cases and is often more precise for express judicial holdings.
 - `search_mode` is global `and` or `or`; spaces split terms. Nested Boolean logic, `NOT`, and proximity operators are not supported.
 - Use structured filters before adding more lexical terms when the scope is already known.
-- Inspect `total` and the returned sample. Refine a noisy query before increasing depth. In a consultation, also open other materially distinct rule/fact/evidence/defense/procedure lanes when they test different risks; do not make every lane wait for a single precision probe.
+- Inspect `total` and the returned sample. Refine a noisy query before increasing depth; expand a proven high-precision query when that is more useful than opening several speculative paths.
 - Search results already provide ID,案号, title, court, date, content snippet, URL, and score. Save these immediately instead of retrieving details later just to recover metadata.
 - Ordinary-case `content` is a highlighted hit, summary, or analysis fragment. Authoritative-case `content` prefers an abstract, holding, or case note. Neither is guaranteed to be full judgment text.
+
+### MCP Response-Size Boundary
+
+A small representative test on 2026-08-26 used six certificate-subsidy queries at `top_k=50`. Four calls failed with `开放平台接口响应过大，已超过 1048576 字节限制`, while two targeted calls succeeded and returned 20 and 10 results. Retesting four failed paths at `top_k=30` made three succeed; one still overflowed. This is an observed bridge/payload behavior, not a universal failure-rate estimate.
+
+- On overflow, the tested tool returned an error and no usable partial result list. Do not treat the call as zero hits or as a truncated but usable capture.
+- Payload size depends on the returned fields and text length, not only the requested count. A smaller `top_k` can still overflow, while a targeted `top_k=50` call can succeed.
+- `top_k=50` is more point-efficient only when the response is likely to fit and the extra candidates are useful. For broad or text-heavy paths, start with a smaller probe, then partition by legally meaningful dimensions such as term family, date, region, cause, court level, document type, or reasoning field.
+- If an overflow occurs, retry with a smaller capture or a meaningful partition and log `capture_status=overflow`. Do not silently convert the transport failure into a substantive search result.
 
 ## Detail Retrieval
 
@@ -51,26 +80,20 @@ Use live prices as accounting inputs, not as a way to define research depth. For
 - Prefer ID when the search result provides a reliable ID.
 - The documented semantics state that案号 is used when no ID is supplied. Passing both ID and案号 therefore does not perform an independent cross-check.
 - Re-fetch by案号 alone only when the ID result conflicts, identity is uncertain, a duplicate is suspected, or a central conclusion justifies the extra call.
-- The ordinary detail response includes segmented fields such as `cmss`, `ajjbqk`, `fxgc`, `pjjg`, and full `content`. Save the complete judgment `content` and provenance to the matter's local Markdown archive, then project only the fields needed for the current model review.
-- Capture all reusable metadata, URL, complete returned judgment text, selected excerpts, result, and caveats in the first successful detail call. A snippet, abstract, case note, or semantic-search organization is not a judgment full text.
+- The ordinary detail response includes segmented fields such as `cmss`, `ajjbqk`, `fxgc`, `pjjg`, and full `content`. Preserve the complete original body locally for every closely read or cited judgment; project only the fields needed for review into the model context. A local projection cannot prevent an overflow that already occurred upstream in the MCP bridge.
+- Capture all reusable metadata, URL, selected excerpts, result, and caveats in the first successful detail call.
 
-## Quality-First Call Decisions
+## Adaptive Calls and Whole-Task Coverage
 
-Use the next call that is most likely to reduce a material uncertainty or close a required coverage lane:
+Use another keyword path, detail or semantic call when it can materially resolve a question, improve court vocabulary, test the opposing explanation or close a gap. Do not choose scope from the cheapest call or any fixed POINT tier. Source response sizes are per-call facts, not total research targets.
 
-- When useful terminology is already known, run focused ordinary/authoritative keyword lanes broadly enough to cover rule language, facts/evidence, and the opponent path; do not choose only the cheapest single formulation.
-- Pull a detail when a promising case can supply real court vocabulary, distinguish court reasoning from party allegations, verify a major conclusion, or decide whether a new path is needed; use the live price rather than a remembered value.
-- Use semantic search when vocabulary remains uncertain, keyword paths leave a material recall gap, or one broad semantic capture can replace several speculative searches; use the live price rather than a remembered value.
-- In consultation-quality mode, a bounded set of parallel, materially distinct initial lanes is justified by the confirmed issue map; avoid only duplicative or factually irrelevant speculation.
-- For keyword search, `top_k=50` costs the same points as `top_k=10`; use the larger capture when local caching/projection exists and the path is sufficiently targeted.
-- When increasing `top_k` or `return_num` through another call, locally dedupe results already seen and account for the duplicated leading results.
-- Use date-delta retrieval for follow-ups instead of rerunning stable historical ranges.
+Choose a useful batch that can actually be returned. If a ranked response is incomplete, expand through productive expressions or meaningful issue/date/court partitions; repeated leading results are not new coverage. Do not infer a semantic maximum from the keyword endpoint. Reuse stable texts and metadata, and search only uncovered time deltas where appropriate.
 
-Do not let point efficiency eliminate a controlling issue, contrary path, full-text verification, authority check, or decision-changing evidence/procedure lane. A matter with several legal issues must be planned and assessed as a whole. When a real balance limit forces omission, record the omitted lane and its likely effect on confidence.
+Closely read and report-cited judgments must be saved in full under `output-schema.md`; candidates not selected for either use need not become permanent files. A returned keyword snippet or semantic case summary is not an original judgment.
 
 ## Context Control
 
-Do not print complete tool responses into the main context by default. Persist each verified judgment full text as its own Markdown file, then locally project:
+Do not print complete tool responses into the main context by default. Locally project:
 
 - case identity and source;
 - court, date, procedure, and URL;

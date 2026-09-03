@@ -43,7 +43,7 @@ Call something a new or important finding only if it points to a current rule, l
 
 Walk through only the most important findings, risks/unknowns, and next steps. Ask what the user wants expanded, use plain-language principles and bounded examples, then use teach-back and invite correction. A material correction updates the workpaper and reruns affected analysis.
 
-At the basic completion point, first state the provisional direction, then ask in one short sentence whether it is enough or the user wants current-law, full-text, and contrary-case database verification. If the user accepts and no Key is configured, say only that a free YuanDian Key is needed and offer to open the registration page. Do not repeat the facts, point ceiling, or internal search plan. At verified completion, ask whether the result is enough or the user still needs human confirmation. A decline ends the offer; do not keep upselling.
+At the basic completion point, first state the provisional direction, then ask in one short sentence whether it is enough or the user wants current-law, full-text, and contrary-case database verification. If the user accepts and no Key is configured, say only that a free YuanDian Key is needed and offer to open the registration page. Do not repeat the facts or internal search plan. At verified completion, ask whether the result is enough or the user still needs human confirmation. A decline ends the offer; do not keep upselling.
 
 ## Lawyer review
 
@@ -54,7 +54,7 @@ Offer lawyer review when the user asks, remains materially confused, faces high 
 - review-request note;
 - material inventory;
 - user-selected key originals;
-- the local judgment full-text index and user-selected full texts relied on by the result.
+- all local judgment files cited by the result, other closely read judgment originals, and a separate full-text index if useful; keep relative links valid when packaging.
 
 Do not send anything. Tell the user to verify recipient details and redact irrelevant personal data without removing legally material context.
 
